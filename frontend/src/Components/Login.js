@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const handleSignInSubmit = (event) => {
     event.preventDefault();
 
@@ -8,14 +11,15 @@ const Login = () => {
     const password = document.getElementById("signin-password").value;
 
     if (username === "srujan" && password === "srujan") {
-      window.location.href = "/admin";
+      // Redirect to Admin component without adding to history
+      navigate("/Admin", { replace: true });
     }
   };
 
   return (
     <section id="login">
       <div>
-        <h1 className="navbar-text text-black m-0 p-0">Plates&Pleasure</h1>
+        <h1 className="navbar-tex m-0 p-0 .text-white">Plates&Pleasure</h1>
 
         <div id="signin-popup" className="popup signin-background">
           <div className="signin-form">

@@ -1,3 +1,4 @@
+// App.js
 import React from "react";
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -6,19 +7,20 @@ import Navbar from "./Components/Navbar";
 import HeroSection from "./Components/HeroSection";
 import AboutSection from "./Components/AboutSection";
 import Menu from "./Components/Menu";
-import BookTable from "./Components/BookTable";
+import BookTable from "./Components/CreateBooking";
 import Gallery from "./Components/Gallery";
 import Chefs from "./Components/Chefs";
 import ContactSection from "./Components/ContactSection";
 import WhyUs from "./Components/WhyUS";
-import Bookinglist from "./Components/bookinglist";
 import Login from "./Components/Login";
-import Admin from "./Components/admin";
+import Cancelform from "./Components/Cancelform";
+import Admin from "./Admin";
 
 function App() {
   return (
     <Router>
       <Navbar />
+
       <Routes>
         <Route path="/" element={<HeroSection />} />
         <Route path="/about" element={<AboutSection />} />
@@ -28,9 +30,13 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/chefs" element={<Chefs />} />
         <Route path="/contact" element={<ContactSection />} />
-        <Route path="/bookinglist" element={<Bookinglist />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/admin" element={<Admin />} />
+        <Route path="/cancel" element={<Cancelform />} />
+      </Routes>
+
+      {/* Nav component is moved inside the main routes */}
+      <Routes>
+        <Route path="/admin/*" element={<Admin />} />
       </Routes>
     </Router>
   );

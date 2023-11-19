@@ -8,7 +8,8 @@ const Navbar = () => {
   const openLoginPage = () => {
     window.open("/Login", "_blank");
   };
-  const isSignInOrAdminPage = location.pathname === "/Login" || location.pathname === "/admin";
+  const isSignInOrAdminPage =
+    location.pathname === "/Login" || location.pathname === "/admin";
   if (isSignInOrAdminPage) {
     return null;
   }
@@ -32,12 +33,12 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav me-auto">
             {" "}
-            <li className="nav-item" >
+            <li className="nav-item">
               <a className="nav-link text-white" href="/">
                 Home
               </a>
             </li>
-            <li className="nav-item" >
+            <li className="nav-item">
               <a className="nav-link text-white" href="/about">
                 About
               </a>
@@ -47,24 +48,19 @@ const Navbar = () => {
                 Menu
               </a>
             </li>
-             <li className="nav-item" >
+            <li className="nav-item">
               <a className="nav-link text-white" href="/gallery">
                 Gallery
               </a>
-            </li> 
+            </li>
             <li className="nav-item">
               <a className="nav-link text-white" href="/chefs">
                 Chefs
               </a>
             </li>
-            <li className="nav-item" >
+            <li className="nav-item">
               <a className="nav-link text-white" href="/contact">
                 Contact
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link text-white" href="/bookinglist">
-                Bookinglist
               </a>
             </li>
           </ul>
@@ -75,7 +71,7 @@ const Navbar = () => {
                 onClick={openLoginPage}
                 className="btn btn-secondary m-0 p-0"
               >
-                Sign in
+                Log in
               </button>
             </li>
           </ul>

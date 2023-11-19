@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bookRoute = require("./controller/bookRoute");
+const contactRoute = require("./controller/contactRoute");
+const cancelRoute = require("./controller/cancelRoute");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
@@ -15,8 +17,9 @@ db.on("error", () => console.log("Error occured"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
-app.use("/bookRoute", bookRoute);
-
+app.use("/", bookRoute);
+app.use("/contactRoute", contactRoute);
+app.use("/cancelRoute", cancelRoute);
 app.listen(4000, () => {
   console.log("server started at 4000");
 });

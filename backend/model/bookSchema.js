@@ -3,12 +3,12 @@ const bookSchema = new mongoose.Schema(
   {
     name: { type: String },
     email: { type: String },
-    phoneNumber: { type: String },
     date: { type: Date },
+    phoneNumber: { type: Number },
     noOfPeople: { type: Number },
   },
   {
-    collection: "Demo",
+    collection: "bookings1",
   }
 );
 

@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 function HeroSection() {
   return (
     <section
@@ -31,18 +33,24 @@ function HeroSection() {
             </div>
 
             <div className="btns d-flex">
-              <a
-                href="/menu"
+              <Link
+                to="/menu"
                 className="btn btn-outline-light btn-transparent box-btn animated fadeInUp scrollto mx-2"
               >
                 Our Menu
-              </a>
-              <a
-                href="/book-table"
+              </Link>
+              <Link
+                to="/book-table"
                 className="btn btn-outline-light btn-transparent box-btn animated fadeInUp scrollto mx-2"
               >
                 Book a Table
-              </a>
+              </Link>
+              <Link
+                to="/cancel"
+                className="btn btn-outline-light btn-transparent box-btn animated fadeInUp scrollto mx-2"
+              >
+                Cancel a Table
+              </Link>
             </div>
           </div>
         </div>
